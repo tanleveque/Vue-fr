@@ -19,27 +19,27 @@
 
 			<section class="menu">
 				<h2>Menu</h2>
-				<div class="menu-item">
-					<img
+				<div v-for="item in simpleMenu" class="menu-item">
+					<img 
 						class="menu-item__image"
-						src="https://via.placeholder.com/300x150"
-						alt=""
+						v-bind:href="item.image.source"
+						v-bind:alt="item.image.alt"
 					/>
 					<div>
-						<h3>Nom de l'article</h3>
-						<p>En stock</p>
-						<p>En rupture de stock</p>
+						<h3 v-bind:key="item.name"> {{ item.name }}</h3>
+						<p v-if="item.inStock === true">En stock</p>
+						<p v-else>En rupture de stock</p>
 						<div>
-							<label for="add-item-quantity">Quantité :</label>
-							<input id="add-item-quantity" type="number" />
-							<button>Ajouter au panier d'achat</button>
+							<label for="add-item-quantity">Quantité : {{ item.quantity }}</label>
+							<input id="add-item-quantity" type="number" v-model.number="item.quantity" />
+							<button v-on="addToShoppingCart(item.quantity)">Ajouter au panier d'achat</button>
 						</div>
 					</div>
 				</div>
 			</section>
 
 			<aside class="shopping-cart">
-				<h2>Panier d'achat: 0 articles</h2>
+				<h2>Panier d'achat: {{ shoppingCart }} articles</h2>
 			</aside>
 
 			<h2>Contactez nous</h2>
@@ -67,6 +67,7 @@
 					email: "hello@cafewithavue.bakery",
 					phone: "01 88 88 88 88",
 					restaurantName: "La belle vue",
+					shoppingCart:0,
 					simpleMenu: [
 						{
 							name: "Croissant",
@@ -102,6 +103,12 @@
 						const currentYear = new Date().getFullYear()
 
 						return `Copyright ${this.restaurantName} ${currentYear}`
+					}
+				},
+				methods:{
+					addToShoppingCart(amount) {
+						this.shoppingCart += amount
+						console.log(amount)
 					}
 				}
 			})
