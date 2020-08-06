@@ -29,7 +29,7 @@
 			</ul>
 
 			<footer class="footer">
-				<p>Copyright {{ restaurantName }} 2019</p>
+				<p>{{ copyrightText }}</p>
 			</footer>
 		</div>
 
@@ -45,8 +45,14 @@
 					LV: "06:00 à 16:00",
 					Samedi: "07:00 à 14:00",
 					Dimanche: "07:00 à 12:00", 
+				},
+				computed: {
+					copyrightText () {
+						return "Copyright" + this.restaurantName ;
+					}
 				}
 			})
+
 		</script>
 	</body>
 </html>
