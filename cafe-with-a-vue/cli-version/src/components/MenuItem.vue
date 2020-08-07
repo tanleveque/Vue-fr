@@ -1,7 +1,15 @@
+// ./components/MenuItem.vue
+<script>
+export default {
+  name: "MenuItem",
+  props: ["name", "image", "inStock", "quantity", "addToShoppingCart"]
+}
+
+</script>
 <template>
   <div>
-    <div v-for="item in simpleMenu" :key="item.name" class="menu-item">
-      <img class="menu-item__image" :src="item.image.source" :alt="item.image.alt" />
+    <div  class="menu-item">
+      <img class="menu-item__image" :src="image.source" :alt="image.alt" />
       <div>
         <h3>{{ item.name }}</h3>
         <p v-if="item.inStock">En stock</p>
@@ -16,23 +24,3 @@
   </div>
 </template>
 
-// ./components/MenuItem.vue
-<script>
-export default {
-  name: "MenuItem",
-  props: ["name", "image", "inStock", "quantity"],
-};
-</script>
-
-
-
-<style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
