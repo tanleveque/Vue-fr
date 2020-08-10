@@ -3,11 +3,12 @@ export default {
 	name: "MenuItem",
 	props: {
 		addToShoppingCart : {
-			type: Boolean,
+			type: Function,
+			required: true,
 		},
 		image : {
-			type : Array,
-			default: () => [],
+			type : Object,
+			required: true,
 			
 		}, 
 		inStock :{
