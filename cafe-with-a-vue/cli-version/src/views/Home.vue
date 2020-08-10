@@ -23,7 +23,7 @@
 		</section>
 
 		<div class="shopping-cart">
-			<h2>Panier : {{ shoppingCart }} articles</h2>
+			<h2 @add-item-to-cart="addToshoppingCart" >Panier : {{ shoppingCart }} articles</h2>
 		</div>
 
 		<footer class="footer">
@@ -81,14 +81,13 @@ export default {
 	computed: {
 		copyright() {
 			const currentYear = new Date().getFullYear()
-
 			return `Copyright ${this.restaurantName} ${currentYear}`
 		}
 	},
 	methods: {
-		addToShoppingCart(amount) {
-			this.shoppingCart += amount
-		}
+		addToShoppingCart(payload) {
+			this.shoppingCart = payload.shoppingCart
+    }
 	}
 }
 </script>
@@ -97,7 +96,8 @@ export default {
 .description {
 	max-width: 960px;
 	font-size: 1.2rem;
-	margin: 0 auto;
+  margin: 0 auto;
+  
 }
 
 .footer {
