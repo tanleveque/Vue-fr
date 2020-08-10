@@ -47,3 +47,16 @@ export default {
 		</div>
 	</div>
 </template>
+
+<style scoped>
+.menu-item {
+  display: flex;
+  width: 500px;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.menu-item__image {
+  max-width: 300px;
+}
+</style>
