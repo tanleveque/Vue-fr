@@ -23,7 +23,7 @@
     </section>
 
     <div class="shopping-cart">
-      <h2> Panier : {{ shoppingCart }} articles</h2>
+      <h2>Panier : {{ shoppingCart }} articles</h2>
     </div>
 
     <footer class="footer">
@@ -112,8 +112,8 @@ export default {
 }
 
 .shopping-cart {
-  position: absolute;
-  right: 30px;
-  top: 0;
+	position: absolute;
+	right: 30px;
+	top: 0;
 }
 </style>

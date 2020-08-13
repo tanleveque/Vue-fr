@@ -37,9 +37,9 @@ export default {
 			}
 		}
 	},
-	methode:{
+	methods:{
 	updateShoppingCart(quantity) {
-		this.$emit('add-items-to-cart', quantity)
+		this.$emit("add-items-to-cart", quantity)
 		}
 	},
 	beforeMount() {
