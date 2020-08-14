@@ -29,7 +29,9 @@ export default {
         },
     },
     data() {
-        return {};
+        return {		
+            onSale: false
+        };
     },
     computed: {
         generatedPrice() {
@@ -58,7 +60,7 @@ export default {
     <div class="menu-item">
         <img class="menu-item__image" :src="image.source" :alt="image.alt" />
         <div>
-            <h3>{{ simpleMenu.name }}</h3>
+            <h3>{{ name }}</h3>
             <p>
                 Prix : {{ generatedPrice }}
                 <span v-if="onSale">(10% de réduction !)</span>

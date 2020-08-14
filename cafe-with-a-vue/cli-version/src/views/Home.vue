@@ -42,19 +42,16 @@ export default {
   components: {
     MenuItem,
   },
-  data() {
-    return {};
-  },
   computed: {
     ...mapState({
-      restaurentName : "restaurentName",
+      restaurantName : "restaurantName",
       shoppingCart: "shoppingCart",
       simpleMenu: "simpleMenu",
       onSale : "onSale",
 	}),
-	...mapGetters({
-		copyright:"copyright"
-	})
+    ...mapGetters({
+      copyright:"copyright"
+    })
   },
   methods: {
     addToShoppingCart(amount) {

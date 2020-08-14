@@ -39,7 +39,6 @@ export default new Vuex.Store({
 				price: 4.99
 			}
 		],
-		onSale: false
 	},
 	getters: {
 		copyright(state) {
